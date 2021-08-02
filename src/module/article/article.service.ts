@@ -2,11 +2,12 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class ArticleService {
-  private videos: string[] = ['Funny Cats', 'Ninja Dogs'];
+  private permission: string[] = ['staff-info', 'staff-wallet'];
 
   root(roles: string[]) {
+    console.log('ArticleService', roles);
     return {
-      videos: this.videos,
+      permission: this.permission,
       userRoles: roles,
     };
   }

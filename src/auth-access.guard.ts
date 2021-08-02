@@ -5,9 +5,10 @@ export class AuthAccessGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean | Promise<boolean> {
     const req = context.switchToHttp().getRequest();
     const fakeUser = {
-      roles: ['ADMIN_UPDATE_OWN_VIDEO', 'USER_CREATE_ANY_VIDEO'],
-      username: '@fake',
+      roles: ['STAFF_CREATE_ANY_INFO', 'ADMIN_UPDATE_OWN_INFO'],
+      username: 'Khunday',
     };
+    console.log('fakeUser :', fakeUser);
     req.user = fakeUser;
     return true;
   }
