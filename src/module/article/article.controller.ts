@@ -14,7 +14,7 @@ export class ArticleController {
 
   @UseGuards(AuthAccessGuard, ACGuard)
   @UseRoles({
-    resource: 'permission',
+    resource: 'video',
     action: 'read',
     possession: 'any',
   })
